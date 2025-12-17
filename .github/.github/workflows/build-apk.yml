@@ -21,7 +21,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
         
-    # نستخدم assembleDebug ليعمل البناء بدون مفاتيح توقيع
     - name: Build APK (Debug)
       run: ./gradlew assembleDebug
       
@@ -29,6 +28,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: income-expense-app
-        # لاحظ أن المسار هنا تغير ليطابق نسخة Debug
         path: app/build/outputs/apk/debug/*.apk
-
